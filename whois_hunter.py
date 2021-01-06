@@ -34,18 +34,14 @@ print ('\033[35m'+'''
 
 #verifica se o programa foi executado em modo root
 permissão_do_usuario = os.geteuid()
-if permissão_do_usuario == 1000:
-      print("              Este programa precisa ser executado em modo ROOT!!")
-      time.sleep(0.5)
-      print("              Este programa precisa ser executado em modo ROOT!!")
-      time.sleep(0.5)
-      print("              Este programa precisa ser executado em modo ROOT!!")
-      time.sleep(0.5)
-      print("                  Exemplo: sudo python3 whois_hunter.py\n\n\n\n")
-      time.sleep(0.5)
-      os._exit()
-elif permissão_do_usuario == 0:
-      pass
+if permissao_do_usuario != 0:
+    for i in range(5):
+        print("              Este programa precisa ser executado em modo ROOT!!\n\n")
+        time.sleep(0.5)        
+    print("                 Exemplo: sudo python3 lazy_nmap_hunter.py")
+    os._exit(0)      
+else:
+    pass
 
 #inicia o laço infinito na ferramenta
 dns = True
